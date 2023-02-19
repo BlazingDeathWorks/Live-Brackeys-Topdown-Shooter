@@ -6,8 +6,9 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject enemy;
 
-    [SerializeField] private float range;
-    [SerializeField] private float time;
+    [SerializeField] private Vector2 range;
+
+    private float time;
     [SerializeField] private float maxTime;
 
     [SerializeField] private bool spawn;
@@ -26,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (time <= 0 && spawn)
         {
-            Instantiate(enemy, new Vector3(transform.position.x + Random.Range(-range, range), transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(enemy, new Vector3(transform.position.x + Random.Range(-range.x, range.x), transform.position.y + Random.Range(-range.y, range.y), transform.position.z), Quaternion.identity);
             time = maxTime;
         }
     }
