@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (x == 0 && y == 0) return;
         rb.velocity = new Vector2(x, y).normalized * speed;
     }
 }
