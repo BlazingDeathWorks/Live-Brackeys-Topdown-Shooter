@@ -19,7 +19,7 @@ public class PlayerShoot : MonoBehaviour
     private void Update()
     {
         Vector2 rawDirection = mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        transform.localEulerAngles = new Vector3(0, 0, (Mathf.Atan2(rawDirection.y, rawDirection.x) * Mathf.Rad2Deg) + offset);
+        transform.localEulerAngles = new Vector3(0, 0, (Mathf.Atan2(rawDirection.y, rawDirection.x) * Mathf.Rad2Deg) - offset);
 
         timeSinceLastShot += Time.deltaTime;
 
