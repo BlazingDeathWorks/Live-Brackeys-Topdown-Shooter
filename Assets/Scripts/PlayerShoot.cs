@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    [SerializeField] private Transform crosshair;
     [SerializeField] private Bullet bullet;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Camera mainCamera;
@@ -18,7 +19,10 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
-        Vector2 rawDirection = mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector2 worldMousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 rawDirection = worldMousePos - (Vector2)transform.position;
+
+        crosshair.position = worldMousePos;
         transform.localEulerAngles = new Vector3(0, 0, (Mathf.Atan2(rawDirection.y, rawDirection.x) * Mathf.Rad2Deg) - offset);
 
         timeSinceLastShot += Time.deltaTime;
