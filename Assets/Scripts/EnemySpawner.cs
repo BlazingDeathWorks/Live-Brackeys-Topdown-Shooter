@@ -32,13 +32,19 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        spawn = false;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            spawn = false;
+        }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        spawn = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            spawn = true;
+        }
     }
 }

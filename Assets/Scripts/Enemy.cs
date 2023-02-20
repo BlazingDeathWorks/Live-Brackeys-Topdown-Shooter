@@ -6,15 +6,15 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
 
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
 
-    void Start()
+    void Awake()
     {
         
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
     }
 }
