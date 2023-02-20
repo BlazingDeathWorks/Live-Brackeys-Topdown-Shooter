@@ -13,6 +13,6 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, PlayerMovement.player.transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, PlayerMovement.player.transform.position, (moveSpeed + GameManager.difficulty) * Time.deltaTime);
     }
 }
