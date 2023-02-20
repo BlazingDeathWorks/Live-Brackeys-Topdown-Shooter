@@ -15,6 +15,7 @@ public class PlayerShoot : MonoBehaviour
     private void Awake()
     {
         timeSinceLastShot = shootRate;
+        Cursor.visible = false;
     }
 
     private void Update()

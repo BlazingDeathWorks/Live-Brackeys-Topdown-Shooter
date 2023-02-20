@@ -29,6 +29,7 @@ public class PlayerHealthSystem : MonoBehaviour
             {
                 return;
             }
+            Cursor.visible = true;
             Destroy(gameObject);
             button.gameObject.SetActive(true);
             Time.timeScale = 0f;
