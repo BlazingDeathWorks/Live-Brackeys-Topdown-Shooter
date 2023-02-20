@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Vector2 range;
 
     private float time;
-    [SerializeField] private float maxTime;
+    private static float maxTime = 3f;
 
     [SerializeField] private bool spawn;
 

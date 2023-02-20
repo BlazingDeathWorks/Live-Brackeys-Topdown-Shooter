@@ -9,8 +9,15 @@ public class PlayerMovement : MonoBehaviour
     private float x, y;
     private Rigidbody2D rb;
 
+    public static PlayerMovement player;
+
     private void Awake()
     {
+        if (player == null)
+        {
+            player = this;
+        }
+
         rb = GetComponent<Rigidbody2D>();
     }
 

@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913635edd406cd8469d4af86ea73c65c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 5
 --- !u!114 &9089703924719931387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,11 +311,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13dc73aaf80e90b45b785449968340d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crosshair: {fileID: 0}
   bullet: {fileID: -7494028070656917595, guid: ab6891f5e3e61c54fb1b5a692cee6a19, type: 3}
   spawnPoint: {fileID: 6743137395003408960}
   mainCamera: {fileID: 0}
   offset: 90
-  shootRate: 0.1
+  shootRate: 0.2
 --- !u!58 &2634696861246479476
 CircleCollider2D:
   m_ObjectHideFlags: 0
