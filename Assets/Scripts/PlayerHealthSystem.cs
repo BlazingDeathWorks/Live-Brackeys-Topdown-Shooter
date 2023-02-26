@@ -9,13 +9,13 @@ public class PlayerHealthSystem : MonoBehaviour
 
     [SerializeField] private Button button;
 
-    [SerializeField] private Text text;
+    [SerializeField] private Text healthText;
 
     private void Awake()
     {
         button.gameObject.SetActive(false);
         Time.timeScale = 1f;
-        text.text = "HP: " + health.ToString();
+        healthText.text = "HP: " + health.ToString();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,7 +24,7 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             Destroy(collision.gameObject);
             health--;
-            text.text = "HP: " + health.ToString();
+            healthText.text = "HP: " + health.ToString();
             if (health > 0)
             {
                 return;
